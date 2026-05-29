@@ -1,17 +1,23 @@
 workflows:
   android-build:
-    name: Android APK Build
+    name: Android APK Release Build
     instance_type: linux_x2
     max_build_duration: 120
     environment:
       flutter: stable
-      java: 17
+    
     scripts:
+      - name: Clean everything
+        script: flutter clean
+      
       - name: Get Flutter packages
         script: flutter pub get
       
       - name: Build APK Release
-        script: flutter build apk --release
+        script: |
+          flutter build apk --release \
+            --target-platform android-arm64 \
+            --build-number $(date +%s)
     
     artifacts:
-      - build/app/outputs/apk/release/app-release.apk
+      - build/app/outputs/apk/release/*.apk
