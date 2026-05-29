@@ -4,10 +4,6 @@ pluginManagement {
         mavenCentral()
         gradlePluginPortal()
     }
-    
-    plugins {
-        id("dev.flutter.flutter-gradle-plugin") version "+" apply false
-    }
 }
 
 dependencyResolutionManagement {
