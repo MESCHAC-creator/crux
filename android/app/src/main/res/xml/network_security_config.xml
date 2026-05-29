@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <!-- Configuration de sécurité réseau pour CRUX -->
+
+    <!-- Allow cleartext traffic for localhost (dev only) -->
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">localhost</domain>
+        <domain includeSubdomains="true">127.0.0.1</domain>
+        <domain includeSubdomains="true">10.0.0.0/8</domain>
+    </domain-config>
+
+    <!-- Default policy: require HTTPS -->
+    <default-config cleartextTrafficPermitted="false">
+        <pin-set>
+            <!-- Public key pins for Firebase -->
+            <pin digest="SHA-256">
+                Ym91bmN5Y2FzdGxlLm9yZy9jZXJ0cy9zdHJvbmdjb2RlLnBlbQ==
+            </pin>
+        </pin-set>
+    </default-config>
+</network-security-config>

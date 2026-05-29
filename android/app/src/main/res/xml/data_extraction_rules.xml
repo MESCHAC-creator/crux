@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+   Sample data extraction rules file. By default, the rules defined here will
+   be applied to all files under the requested domain(s).
+-->
+
+<data-extraction-rules>
+    <domain-config>
+        <domain name="sharedpref" />
+        <domain name="database" />
+        <domain name="file" />
+        <domain name="cache" />
+        <domain name="preferences" />
+    </domain-config>
+    <domain-config>
+        <domain name="sharedpref" />
+    </domain-config>
+</data-extraction-rules>

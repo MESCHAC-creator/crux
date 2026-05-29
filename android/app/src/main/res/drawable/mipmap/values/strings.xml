@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">CRUX</string>
+    <string name="app_title">CRUX - Vidéoconférence Premium</string>
+    <string name="app_description">APPLICATION DE VISIOCONFÉRENCE</string>
+
+    <!-- General -->
+    <string name="ok">OK</string>
+    <string name="cancel">Annuler</string>
+    <string name="yes">Oui</string>
+    <string name="no">Non</string>
+    <string name="loading">Chargement...</string>
+    <string name="error">Erreur</string>
+    <string name="success">Succès</string>
+
+    <!-- Auth -->
+    <string name="login">Connexion</string>
+    <string name="signup">Inscription</string>
+    <string name="logout">Déconnexion</string>
+    <string name="email">Email</string>
+    <string name="password">Mot de passe</string>
+    <string name="name">Nom</string>
+
+    <!-- Meeting -->
+    <string name="start_meeting">Commencer une réunion</string>
+    <string name="join_meeting">Rejoindre une réunion</string>
+    <string name="meeting_name">Nom de la réunion</string>
+    <string name="end_meeting">Terminer la réunion</string>
+
+    <!-- Permissions -->
+    <string name="camera_permission">CRUX a besoin d\'accéder à votre caméra</string>
+    <string name="microphone_permission">CRUX a besoin d\'accéder à votre microphone</string>
+</resources>
