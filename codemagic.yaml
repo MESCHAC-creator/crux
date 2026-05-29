@@ -1,0 +1,34 @@
+workflows:
+  android-apk-release:
+    name: Android APK Release
+    instance_type: mac_mini
+    max_build_duration: 120
+    environment:
+      flutter: stable
+      java: 17
+    scripts:
+      - name: Get Flutter packages
+        script: flutter pub get
+      
+      - name: Build APK Release
+        script: flutter build apk --release
+    
+    artifacts:
+      - build/app/outputs/apk/release/app-release.apk
+
+  android-apk-debug:
+    name: Android APK Debug
+    instance_type: mac_mini
+    max_build_duration: 120
+    environment:
+      flutter: stable
+      java: 17
+    scripts:
+      - name: Get Flutter packages
+        script: flutter pub get
+      
+      - name: Build APK Debug
+        script: flutter build apk --debug
+    
+    artifacts:
+      - build/app/outputs/apk/debug/app-debug.apk
