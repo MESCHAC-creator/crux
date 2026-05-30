@@ -1,12 +1,3 @@
-name: crux
-description: "APPLICATION DE VISIOCONFÉRENCE - Vidéoconférence premium avec Agora.io et Firebase. Meilleure interface que Zoom et Google Meet avec design rouge, violet et blanc."
-publish_to: 'none'
-
-environment:
-  sdk: '^3.12.0'
-
-version: 1.0.0+1
-
 dependencies:
   flutter:
     sdk: flutter
@@ -20,6 +11,20 @@ dependencies:
 
   # Agora RTC Video Conference
   agora_rtc_engine: ^6.2.0
-  agora_uikit: ^1.2.0
+  # ❌ SUPPRIMEZ: agora_uikit: ^1.2.0
 
-  # ... resto du fichier
+  # Permissions
+  permission_handler: ^11.1.0
+
+  # Localization
+  intl: ^0.20.2
+  flutter_localizations:
+    sdk: flutter
+
+  # Other
+  provider: ^6.0.0
+  http: ^1.1.0
+  logger: ^2.0.0
+  lottie: ^2.0.0
+  shared_preferences: ^2.0.0
+  uuid: ^4.0.0
