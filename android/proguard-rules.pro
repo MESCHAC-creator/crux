@@ -1,57 +1,30 @@
-# Proguard rules for Flutter app
-
-# Preserve Flutter classes
+# Flutter
 -keep class io.flutter.** { *; }
--dontwarn io.flutter.**
+-keep class io.flutter.plugins.** { *; }
+-keep class io.flutter.embedding.** { *; }
 
-# Preserve Dart classes
--keep class com.example.crux.** { *; }
--dontwarn com.example.crux.**
+# Agora
+-keep class io.agora.** {*;}
+-keepattributes *Annotation*
+-keepattributes Signature
 
-# Preserve Agora classes
--keep class io.agora.** { *; }
--dontwarn io.agora.**
-
-# Preserve Firebase classes
+# Firebase
 -keep class com.google.firebase.** { *; }
 -keep class com.google.android.gms.** { *; }
--dontwarn com.google.firebase.**
 -dontwarn com.google.android.gms.**
 
-# Preserve application classes
--keep public class * extends android.app.Activity
--keep public class * extends android.app.Service
--keep public class * extends android.content.BroadcastReceiver
--keep public class * extends android.view.View
--keep public class * extends android.app.Fragment
--keep public class * extends androidx.fragment.app.Fragment
+# Kotlin
+-keep class kotlin.** { *; }
+-keep interface kotlin.** { *; }
+-dontwarn kotlin.**
 
-# Preserve annotation classes
--keepattributes *Annotation*
--keepattributes SourceFile
--keepattributes LineNumberTable
--renamesourcefileattribute SourceFile
+# General
+-dontwarn android.content.**
+-dontwarn android.view.**
+-dontwarn android.app.**
+-dontwarn androidx.**
 
-# Preserve native methods
--keepclasseswithmembernames class * {
-    native <methods>;
-}
-
-# Preserve enums
--keepclassmembers enum * {
-    public static **[] values();
-    public static ** valueOf(java.lang.String);
-}
-
-# Preserve Parcelable classes
--keep class * implements android.os.Parcelable {
-    public static final android.os.Parcelable$Creator *;
-}
-
-# Preserve R classes
--keepclassmembers class **.R$* {
-    public static <fields>;
-}
-
-# Preserve BuildConfig
--keep class **.BuildConfig { *; }
+# Optimizations
+-optimizationpasses 5
+-dontskipnonpubliclibraryclasses
+-dontskipnonpubliclibraryclassmembers
