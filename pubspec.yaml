@@ -3,117 +3,23 @@ description: "APPLICATION DE VISIOCONFÉRENCE - Vidéoconférence premium avec A
 publish_to: 'none'
 
 environment:
-  sdk: '^3.11.0'
+  sdk: '^3.12.0'
 
 version: 1.0.0+1
 
 dependencies:
   flutter:
     sdk: flutter
-  
+
   # Firebase Services
   firebase_core: ^2.24.2
   firebase_auth: ^4.14.0
   cloud_firestore: ^4.13.0
   firebase_storage: ^11.5.0
   firebase_analytics: ^10.7.0
-  
+
   # Agora RTC Video Conference
   agora_rtc_engine: ^6.2.0
   agora_uikit: ^1.2.0
-  
-  # Permissions
-  permission_handler: ^11.1.0
-  
-  # State Management
-  provider: ^6.0.0
-  get: ^4.6.6
-  
-  # Storage & Cache
-  shared_preferences: ^2.2.2
-  hive: ^2.2.3
-  get_storage: ^2.1.1
-  
-  # UI/UX Components
-  flutter_localizations:
-    sdk: flutter
-  intl: ^0.20.2
-  cupertino_icons: ^1.0.2
-  google_fonts: ^6.1.0
-  lottie: ^2.7.0
-  animate_do: ^3.1.2
-  shimmer: ^3.0.0
-  flutter_staggered_animations: ^1.1.1
-  
-  # Network & Connectivity
-  connectivity_plus: ^5.0.0
-  http: ^1.1.0
-  dio: ^5.3.1
-  
-  # Logging & Debugging
-  logger: ^2.0.0
-  
-  # Audio/Video Processing
-  audio_session: ^0.1.16
-  flutter_sound: ^9.10.9
-  
-  # Image & Media
-  image_picker: ^1.0.4
-  cached_network_image: ^3.3.0
-  
-  # Video Players
-  video_player: ^2.8.0
-  
-  # Charts & Analytics
-  fl_chart: ^0.65.0
-  
-  # Date & Time
-  intl_utils: ^2.8.4
 
-dev_dependencies:
-  flutter_test:
-    sdk: flutter
-  flutter_lints: ^3.0.0
-  build_runner: ^2.4.6
-  hive_generator: ^2.0.1
-
-flutter:
-  uses-material-design: true
-  
-  assets:
-    - assets/images/
-    - assets/images/icons/
-    - assets/images/logo/
-    - assets/animations/
-    - assets/sounds/
-    - assets/videos/
-    - assets/data/
-  
-  fonts:
-    - family: Poppins
-      fonts:
-        - asset: assets/fonts/Poppins-Light.ttf
-          weight: 300
-        - asset: assets/fonts/Poppins-Regular.ttf
-          weight: 400
-        - asset: assets/fonts/Poppins-Medium.ttf
-          weight: 500
-        - asset: assets/fonts/Poppins-SemiBold.ttf
-          weight: 600
-        - asset: assets/fonts/Poppins-Bold.ttf
-          weight: 700
-        - asset: assets/fonts/Poppins-ExtraBold.ttf
-          weight: 800
-        - asset: assets/fonts/Poppins-Black.ttf
-          weight: 900
-    
-    - family: Inter
-      fonts:
-        - asset: assets/fonts/Inter-Regular.ttf
-          weight: 400
-        - asset: assets/fonts/Inter-Medium.ttf
-          weight: 500
-        - asset: assets/fonts/Inter-SemiBold.ttf
-          weight: 600
-        - asset: assets/fonts/Inter-Bold.ttf
-          weight: 700
+  # ... resto du fichier
