@@ -1,3 +1,12 @@
+name: crux
+description: "APPLICATION DE VISIOCONFÉRENCE - Vidéoconférence premium avec Agora.io et Firebase. Meilleure interface que Zoom et Google Meet avec design rouge, violet et blanc."
+publish_to: 'none'
+
+environment:
+  sdk: '^3.12.0'
+
+version: 1.0.0+1
+
 dependencies:
   flutter:
     sdk: flutter
@@ -11,7 +20,6 @@ dependencies:
 
   # Agora RTC Video Conference
   agora_rtc_engine: ^6.2.0
-  # ❌ SUPPRIMEZ: agora_uikit: ^1.2.0
 
   # Permissions
   permission_handler: ^11.1.0
@@ -21,10 +29,63 @@ dependencies:
   flutter_localizations:
     sdk: flutter
 
-  # Other
+  # State Management
   provider: ^6.0.0
+
+  # Networking
   http: ^1.1.0
+
+  # Logging
   logger: ^2.0.0
+
+  # Animations
   lottie: ^2.0.0
+
+  # Local Storage
   shared_preferences: ^2.0.0
+
+  # UUID Generator
   uuid: ^4.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^3.0.2
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/animations/
+    - assets/sounds/
+
+  fonts:
+    - family: Poppins
+      fonts:
+        - asset: assets/fonts/Poppins-Light.ttf
+          weight: 300
+        - asset: assets/fonts/Poppins-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Poppins-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Poppins-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Poppins-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Poppins-ExtraBold.ttf
+          weight: 800
+        - asset: assets/fonts/Poppins-Black.ttf
+          weight: 900
+
+    - family: Inter
+      fonts:
+        - asset: assets/fonts/Inter-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Inter-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Inter-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Inter-Bold.ttf
+          weight: 700
