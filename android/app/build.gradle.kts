@@ -7,7 +7,6 @@ plugins {
 android {
     namespace = "com.example.crux"
     compileSdk = 34
-    ndkVersion = "25.1.8937393"
 
     defaultConfig {
         applicationId = "com.example.crux"
@@ -15,6 +14,8 @@ android {
         targetSdk = 34
         versionCode = 1
         versionName = "1.0.0"
+        
+        multiDexEnabled = true
     }
 
     buildTypes {
@@ -27,20 +28,24 @@ android {
         }
         debug {
             isDebuggable = true
+            isMinifyEnabled = false
         }
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
     }
 
     kotlinOptions {
-        jvmTarget = "17"
+        jvmTarget = "11"
     }
 
     lint {
-        disable += listOf("MissingDimensionRegistration")
+        disable += listOf(
+            "MissingDimensionRegistration",
+            "InvalidPackage"
+        )
     }
 }
 
@@ -49,8 +54,8 @@ flutter {
 }
 
 dependencies {
-    // Firebase BOM
-    implementation(platform("com.google.firebase:firebase-bom:32.7.2"))
+    // Firebase BOM (compatible avec AGP 7.4.2)
+    implementation(platform("com.google.firebase:firebase-bom:32.4.0"))
     
     // Firebase
     implementation("com.google.firebase:firebase-core")
@@ -60,10 +65,11 @@ dependencies {
     implementation("com.google.firebase:firebase-analytics")
     
     // Android
-    implementation("com.google.android.material:material:1.11.0")
+    implementation("com.google.android.material:material:1.9.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+    implementation("androidx.multidex:multidex:2.0.1")
     
     // Kotlin
-    implementation("org.jetbrains.kotlin:kotlin-stdlib:1.9.22")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib:1.8.10")
 }
