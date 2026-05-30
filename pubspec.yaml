@@ -1,5 +1,5 @@
 name: crux
-description: "APPLICATION DE VISIOCONFÉRENCE - Vidéoconférence premium avec Agora.io et Firebase. Meilleure interface que Zoom et Google Meet avec design rouge, violet et blanc."
+description: "APPLICATION DE VISIOCONFÉRENCE - Vidéoconférence premium avec Agora.io et Firebase."
 publish_to: 'none'
 
 environment:
