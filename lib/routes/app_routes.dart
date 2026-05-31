@@ -3,18 +3,21 @@ import '../screens/splash_screen.dart';
 import '../screens/login_screen.dart';
 import '../screens/home_screen.dart';
 import '../screens/meeting_screen.dart';
-import '../screens/settings_screen.dart';
+import '../screens/setting_screen.dart';
+import '../screens/meeting_details_screen.dart';
 import '../models/user_model.dart';
+import '../models/meeting_model.dart';
 
 class AppRoutes {
   static const String splash = '/';
   static const String login = '/login';
   static const String home = '/home';
   static const String meeting = '/meeting';
-  static const String settings = '/settings';
+  static const String meetingDetails = '/meeting-details';
+  static const String settingsRoute = '/settings';
 
-  static Route<dynamic> generateRoute(RouteSettings settings) {
-    switch (settings.name) {
+  static Route<dynamic> generateRoute(RouteSettings routeSettings) {
+    switch (routeSettings.name) {
       case splash:
         return MaterialPageRoute(builder: (_) => const SplashScreen());
 
@@ -22,17 +25,15 @@ class AppRoutes {
         return MaterialPageRoute(builder: (_) => const LoginScreen());
 
       case home:
-        final user = settings.arguments as UserModel?;
+        final user = routeSettings.arguments as UserModel?;
         return MaterialPageRoute(
-          builder: (_) => HomeScreen(user: user ?? UserModel(
-            uid: '',
-            email: '',
-            name: 'Utilisateur',
-          )),
+          builder: (_) => HomeScreen(
+            user: user ?? UserModel(uid: '', email: '', name: 'Utilisateur'),
+          ),
         );
 
       case meeting:
-        final args = settings.arguments as Map<String, dynamic>?;
+        final args = routeSettings.arguments as Map<String, dynamic>?;
         return MaterialPageRoute(
           builder: (_) => MeetingScreen(
             meetingId: args?['meetingId'] ?? '',
@@ -40,7 +41,16 @@ class AppRoutes {
           ),
         );
 
-      case settings:
+      case meetingDetails:
+        final meetingModel = routeSettings.arguments as MeetingModel?;
+        if (meetingModel == null) {
+          return MaterialPageRoute(builder: (_) => const SplashScreen());
+        }
+        return MaterialPageRoute(
+          builder: (_) => MeetingDetailsScreen(meeting: meetingModel),
+        );
+
+      case settingsRoute:
         return MaterialPageRoute(builder: (_) => const SettingsScreen());
 
       default:

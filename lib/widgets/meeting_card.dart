@@ -58,7 +58,7 @@ class MeetingCard extends StatelessWidget {
           border: Border.all(color: AppColors.border),
           boxShadow: const [
             BoxShadow(
-              color: Colors.black08,
+              color: Colors.black12,
               blurRadius: 8,
               offset: Offset(0, 2),
             ),

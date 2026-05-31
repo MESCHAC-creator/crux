@@ -1,0 +1,69 @@
+{
+  "appName": "CRUX",
+  "appTitle": "CRUX - Videoconferencia Premium",
+
+  "login": "Iniciar sesión",
+  "signup": "Registrarse",
+  "logout": "Cerrar sesión",
+  "email": "Correo electrónico",
+  "password": "Contraseña",
+  "name": "Nombre",
+  "rememberMe": "Recuérdame",
+  "forgotPassword": "¿Olvidaste tu contraseña?",
+  "createAccount": "Crear cuenta",
+  "alreadyHaveAccount": "¿Ya tienes una cuenta?",
+  "dontHaveAccount": "¿No tienes cuenta?",
+
+  "welcome": "Bienvenido",
+  "welcomeBack": "Bienvenido de nuevo",
+  "home": "Inicio",
+  "meetings": "Reuniones",
+  "settings": "Configuración",
+  "profile": "Perfil",
+
+  "startMeeting": "Iniciar reunión",
+  "joinMeeting": "Unirse a la reunión",
+  "meetingName": "Nombre de la reunión",
+  "meetingDescription": "Descripción",
+  "meetingDuration": "Duración",
+  "participants": "Participantes",
+
+  "mic": "Micrófono",
+  "camera": "Cámara",
+  "speaker": "Altavoz",
+  "record": "Grabar",
+  "share": "Compartir",
+  "settings_menu": "Configuración",
+
+  "endMeeting": "Finalizar reunión",
+  "leaveMeeting": "Salir de la reunión",
+  "leaveConfirm": "¿Estás seguro de que quieres salir?",
+
+  "error": "Error",
+  "success": "Éxito",
+  "warning": "Advertencia",
+  "info": "Información",
+
+  "fillAllFields": "Por favor, completa todos los campos",
+  "invalidEmail": "Correo electrónico inválido",
+  "passwordTooShort": "Contraseña demasiado corta (mín. 6 caracteres)",
+  "passwordsDontMatch": "Las contraseñas no coinciden",
+
+  "loginSuccess": "✅ Sesión iniciada correctamente",
+  "signupSuccess": "✅ Registro exitoso",
+  "logoutSuccess": "✅ Sesión cerrada correctamente",
+  "meetingCreated": "✅ Reunión creada correctamente",
+
+  "networkError": "Error de red - Verifica tu conexión a Internet",
+  "timeoutError": "Tiempo de espera agotado",
+  "unknownError": "Se produjo un error desconocido",
+
+  "loading": "Cargando...",
+  "cancel": "Cancelar",
+  "ok": "OK",
+  "save": "Guardar",
+  "delete": "Eliminar",
+  "edit": "Editar",
+  "close": "Cerrar",
+  "submit": "Enviar"
+}

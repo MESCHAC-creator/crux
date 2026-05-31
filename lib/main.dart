@@ -7,6 +7,7 @@ import 'config/agora_config.dart';
 import 'services/agora_service.dart';
 import 'services/error_handler_service.dart';
 import 'firebase_options.dart';
+import 'routes/app_routes.dart';
 import 'screens/splash_screen.dart';
 import 'screens/login_screen.dart';
 import 'screens/home_screen.dart';
@@ -59,6 +60,7 @@ class _MyAppState extends State<MyApp> {
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
       themeMode: ThemeMode.light,
+      onGenerateRoute: AppRoutes.generateRoute,
       home: const AuthWrapper(),
     );
   }
