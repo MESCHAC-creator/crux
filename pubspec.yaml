@@ -3,7 +3,7 @@ description: "APPLICATION DE VISIOCONFÉRENCE ZOOM-LIKE"
 publish_to: 'none'
 
 environment:
-  sdk: '>=3.5.0 <4.0.0'
+  sdk: '>=2.12.0'
 
 version: 2.38.0+1
 
@@ -62,7 +62,7 @@ dependencies:
   # ═══════════════════════════════════════════════════════════════════════════
   flutter_webrtc: ">=0.12.12+hotfix.1 <2.0.0"  # WebRTC base
   livekit_client: ^2.3.3  # Large conferences (open-source SFU)
-  jitsi_meet: ^0.1.8  # ✨ NEW: 300+ participants
+  jitsi_meet: ^4.0.0  # ✨ NEW: 300+ participants
 
   # ═══════════════════════════════════════════════════════════════════════════
   # UTILITIES & CRYPTO
