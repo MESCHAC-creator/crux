@@ -111,12 +111,6 @@ dependencies:
   # ═══════════════════════════════════════════════════════════════════════════
   timezone: ^0.9.4
 
-  # ═══════════════════════════════════════════════════════════════════════════
-  # CLOUD SERVICES (Optional but Recommended)
-  # ═══════════════════════════════════════════════════════════════════════════
-  aws_s3: ^0.2.2  # ✨ NEW: S3 integration for recordings
-  ffmpeg_kit_flutter: ^5.1.0  # ✨ NEW: Local video encoding
-
 dev_dependencies:
   flutter_test:
     sdk: flutter
