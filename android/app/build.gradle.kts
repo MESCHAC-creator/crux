@@ -1,102 +1,69 @@
-plugins {
-    id("com.android.application")
-    id("org.jetbrains.kotlin.android")
-    id("dev.flutter.flutter-gradle-plugin")
-}
-
-apply(plugin = "com.google.gms.google-services")
-
-val localProperties = java.util.Properties()
-val localPropertiesFile = rootProject.file("local.properties")
+def localProperties = new Properties()
+def localPropertiesFile = rootProject.file('local.properties')
 if (localPropertiesFile.exists()) {
-    localPropertiesFile.inputStream().use { localProperties.load(it) }
+    localPropertiesFile.withReader('UTF-8') { reader ->
+        localProperties.load(reader)
+    }
 }
 
-val flutterVersionCode = localProperties.getProperty("flutter.versionCode") ?: "1"
-val flutterVersionName = localProperties.getProperty("flutter.versionName") ?: "1.0"
+def flutterRoot = localProperties.getProperty('flutter.sdk')
+if (flutterRoot == null) {
+    throw new GradleException("Flutter SDK not found. Define location with flutter.sdk in the local.properties file.")
+}
+
+def flutterVersionCode = localProperties.getProperty('flutter.versionCode')
+if (flutterVersionCode == null) {
+    flutterVersionCode = '1'
+}
+
+def flutterVersionName = localProperties.getProperty('flutter.versionName')
+if (flutterVersionName == null) {
+    flutterVersionName = '1.0'
+}
+
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
+apply plugin: 'com.google.gms.google-services'
 
 android {
-    namespace = "com.example.crux"
-    compileSdk = 35
-    ndkVersion = "27.0.12077973"
+    compileSdkVersion 34
 
     compileOptions {
-        isCoreLibraryDesugaringEnabled = true
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 
     kotlinOptions {
-        jvmTarget = "11"
+        jvmTarget = '1.8'
     }
 
-    signingConfigs {
-        create("release") {
-            storeFile = file("crux.keystore")
-            storePassword = "crux2024!"
-            keyAlias = "crux_key"
-            keyPassword = "crux2024!"
-        }
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
     }
 
     defaultConfig {
-        applicationId = "com.example.crux"
-        minSdk = 24
-        targetSdk = 35
-        versionCode = flutterVersionCode.toInt()
-        versionName = flutterVersionName
-        multiDexEnabled = true
+        applicationId "com.example.app"
+        minSdkVersion 21
+        targetSdkVersion 34
+        versionCode flutterVersionCode.toInteger()
+        versionName flutterVersionName
     }
 
     buildTypes {
         release {
-            signingConfig = signingConfigs.getByName("release")
-            isMinifyEnabled = false
-            isShrinkResources = false
-        }
-        debug {
-            signingConfig = signingConfigs.getByName("release")
-            isDebuggable = true
-        }
-    }
-
-    lint {
-        checkReleaseBuilds = false
-        abortOnError = false
-    }
-
-    packaging {
-        resources {
-            excludes += setOf(
-                "META-INF/DEPENDENCIES",
-                "META-INF/LICENSE",
-                "META-INF/LICENSE.txt",
-                "META-INF/NOTICE",
-                "META-INF/NOTICE.txt"
-            )
+            signingConfig signingConfigs.debug
         }
     }
 }
 
 flutter {
-    source = "../.."
-}
-
-// Add Flutter plugin subprojects as compile dependencies.
-// These projects are included in settings.gradle.kts from .flutter-plugins.
-val flutterPluginsFile = File(rootProject.projectDir.parentFile, ".flutter-plugins")
-if (flutterPluginsFile.exists()) {
-    val pluginProps = java.util.Properties()
-    flutterPluginsFile.inputStream().use { pluginProps.load(it) }
-    pluginProps.forEach { (pluginName, _) ->
-        if (findProject(":$pluginName") != null) {
-            dependencies.add("implementation", project(":$pluginName"))
-        }
-    }
+    source '../..'
 }
 
 dependencies {
-    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.4")
-    implementation("androidx.multidex:multidex:2.0.1")
-    implementation("androidx.core:core:1.12.0")
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+    implementation platform('com.google.firebase:firebase-bom:32.3.1')
+    implementation 'com.google.firebase:firebase-analytics'
+    implementation 'com.google.firebase:firebase-firestore'
 }
