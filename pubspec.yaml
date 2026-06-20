@@ -62,8 +62,6 @@ dependencies:
   # ═══════════════════════════════════════════════════════════════════════════
   flutter_webrtc: ">=0.12.12+hotfix.1 <2.0.0"  # WebRTC base
   livekit_client: ^2.3.3  # Large conferences (open-source SFU)
-  agora_rtc_engine: ^6.3.0  # ✨ NEW: Small/medium conferences (low latency)
-  agora_uikit: ^0.1.7  # ✨ NEW: Agora UI components
   jitsi_meet: ^0.1.8  # ✨ NEW: 300+ participants
 
   # ═══════════════════════════════════════════════════════════════════════════
