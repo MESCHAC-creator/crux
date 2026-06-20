@@ -1,0 +1,292 @@
+╔════════════════════════════════════════════════════════════════════════════╗
+║                                                                            ║
+║         ⚠️  DÉPENDANCES & CLÉS - AVANT DE PUSH À GITHUB                    ║
+║                                                                            ║
+║                   À FAIRE ABSOLUMENT MAINTENANT!                          ║
+║                                                                            ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+
+## 📊 STATUS ACTUEL
+
+DÉPENDANCES:
+  ✅ 80% présentes (Flutter, Firebase, UI, etc.)
+  ❌ 20% MANQUANTES (Agora, file_picker, aws_s3, etc.)
+
+CLÉS D'API:
+  ✅ Firebase: configurée
+  ❌ Agora: MANQUANTE
+  ❌ AWS: MANQUANTE
+  ⚠️ Google Cloud: optionnelle
+
+FICHIERS DE CONFIG:
+  ✅ .env.local: existe (vide ou partiel)
+  ❌ google-services.json: à télécharger
+  ❌ GoogleService-Info.plist: à télécharger
+  ❌ .gitignore: à mettre à jour
+
+
+════════════════════════════════════════════════════════════════════════════
+
+## 🚨 ACTIONS CRITIQUES AVANT PUSH
+
+### ÉTAPE 1: Mettre à jour pubspec.yaml (5 minutes)
+
+J'ai déjà mis à jour pubspec.yaml avec:
+✅ firebase_storage
+✅ agora_rtc_engine + agora_uikit
+✅ jitsi_meet
+✅ file_picker
+✅ cached_network_image
+✅ flutter_dotenv
+✅ aws_s3
+✅ ffmpeg_kit_flutter
+
+Action: Exécute dans le terminal:
+
+```bash
+cd /chemin/vers/crux
+flutter pub get
+```
+
+
+### ÉTAPE 2: Configurer les clés d'API (10-20 minutes)
+
+FIREBASE (déjà faites?):
+  [ ] Créer/vérifier projet Firebase
+  [ ] Télécharger google-services.json → android/app/
+  [ ] Télécharger GoogleService-Info.plist → ios/Runner/
+
+AGORA (CRITIQUE - Screen sharing):
+  [ ] Aller sur: https://console.agora.io/
+  [ ] Créer un projet
+  [ ] Copier App ID + App Signing Key
+  [ ] Ajouter à .env.local
+
+AWS S3 (Pour recordings):
+  [ ] Aller sur: https://aws.amazon.com/
+  [ ] Créer bucket S3: crux-recordings-prod
+  [ ] Créer IAM user avec S3 access
+  [ ] Copier Access Key + Secret Key
+  [ ] Ajouter à .env.local
+
+GOOGLE CLOUD (Optionnel - Transcription):
+  [ ] Aller sur: https://console.cloud.google.com/
+  [ ] Créer projet
+  [ ] Enable Speech-to-Text API
+  [ ] Créer service account JSON
+  [ ] Ajouter à .env.local
+
+Voir: GUIDE_CONFIGURATION_CLES.md pour détails
+
+
+### ÉTAPE 3: Mettre à jour .env.local (5 minutes)
+
+Fichier template disponible: .env.local.template
+
+Copie le template et remplis:
+
+```env
+# Firebase
+FIREBASE_PROJECT_ID=crux-8aa85
+
+# Agora (CRITICAL)
+AGORA_APP_ID=YOUR_AGORA_KEY
+AGORA_APP_SIGNING_KEY=YOUR_SIGNING_KEY
+
+# AWS (pour recording)
+AWS_ACCESS_KEY_ID=YOUR_AWS_KEY
+AWS_SECRET_ACCESS_KEY=YOUR_AWS_SECRET
+AWS_S3_BUCKET=crux-recordings-prod
+AWS_S3_REGION=eu-west-1
+
+# Google Cloud (optionnel)
+GOOGLE_CLOUD_SPEECH_KEY=path/to/credentials.json
+
+# Jitsi (optionnel)
+JITSI_SFU_URL=https://meet.jitsi.org
+
+# Env
+ENVIRONMENT=production
+```
+
+
+### ÉTAPE 4: Télécharger Firebase Config Files (5 minutes)
+
+ANDROID:
+  1. Va sur: https://console.firebase.google.com
+  2. Projet: crux-8aa85
+  3. Android app settings
+  4. Télécharger: google-services.json
+  5. Placer dans: android/app/google-services.json
+
+iOS:
+  1. Va sur: https://console.firebase.google.com
+  2. Projet: crux-8aa85
+  3. iOS app settings
+  4. Télécharger: GoogleService-Info.plist
+  5. Placer dans: ios/Runner/GoogleService-Info.plist
+
+Vérifie:
+```bash
+ls -la android/app/google-services.json
+ls -la ios/Runner/GoogleService-Info.plist
+```
+
+
+### ÉTAPE 5: Vérifier .gitignore (2 minutes)
+
+Vérifier que .gitignore contient:
+  [ ] .env
+  [ ] .env.local
+  [ ] .env.*.local
+  [ ] google-services.json
+  [ ] GoogleService-Info.plist
+  [ ] secrets/
+
+J'ai déjà mis à jour .gitignore
+
+
+### ÉTAPE 6: Vérifier pas de secrets exposés (2 minutes)
+
+Exécute:
+```bash
+# Vérifier pas de clés dans le code
+grep -r "AGORA_APP_ID\s*=" lib/ && echo "❌ DANGER!" || echo "✅ OK"
+grep -r "AWS_SECRET" lib/ && echo "❌ DANGER!" || echo "✅ OK"
+grep -r "FIREBASE_KEY" lib/ && echo "❌ DANGER!" || echo "✅ OK"
+
+# Vérifier .gitignore
+grep ".env.local" .gitignore && echo "✅ .env.local ignoré" || echo "❌ DANGER!"
+```
+
+
+════════════════════════════════════════════════════════════════════════════
+
+## 🔄 ORDRE DES ACTIONS
+
+1. ✅ flutter pub get (pour télécharger les nouvelles dépendances)
+2. ✅ Ajouter AGORA_APP_ID dans .env.local
+3. ✅ Ajouter AWS clés dans .env.local
+4. ✅ Télécharger google-services.json
+5. ✅ Télécharger GoogleService-Info.plist
+6. ✅ Vérifier .gitignore
+7. ✅ Vérifier pas de secrets en dur
+8. ✅ Exécuter: flutter analyze
+9. ✅ Exécuter: flutter test
+10. ✅ THEN: PUSH À GITHUB!
+
+
+════════════════════════════════════════════════════════════════════════════
+
+## ⏱️ TEMPS TOTAL
+
+- Dépendances (flutter pub get): 2-5 minutes
+- Configuration Agora: 5 minutes
+- Configuration AWS: 10 minutes
+- Télécharger Firebase configs: 5 minutes
+- Vérifications: 5 minutes
+
+TOTAL: ~30 minutes
+
+APRÈS: Prêt pour PUSH à GitHub! 🚀
+
+
+════════════════════════════════════════════════════════════════════════════
+
+## 🎯 COMMANDE APRÈS TOUTES LES CONFIGURATIONS
+
+Une fois que TOUT est configuré:
+
+```bash
+cd /chemin/vers/crux
+
+# Nettoyer
+flutter clean
+
+# Récupérer les dépendances
+flutter pub get
+
+# Vérifier pas d'erreurs
+flutter analyze
+
+# Tester (optionnel)
+flutter test 2>&1 | head -50
+
+# PUIS PUSH:
+git init
+git config user.name "Ton Nom"
+git config user.email "ton@email.com"
+git remote add origin https://github.com/TON_USERNAME/crux.git
+git add .
+git commit -m "🚀 Release CRUX v1.0.0 - Production Ready"
+git tag -a v1.0.0 -m "CRUX v1.0.0"
+git push -u origin main
+git push origin v1.0.0
+
+echo "✅ CRUX PUSHÉ À GITHUB!"
+```
+
+
+════════════════════════════════════════════════════════════════════════════
+
+## 📋 CHECKLIST FINALE
+
+AVANT PUSH À GITHUB, VÉRIFIER:
+
+- [ ] pubspec.yaml mis à jour
+- [ ] flutter pub get exécuté sans erreurs
+- [ ] .env.local configuré avec les clés
+- [ ] google-services.json présent (android/app/)
+- [ ] GoogleService-Info.plist présent (ios/Runner/)
+- [ ] .gitignore contient les secrets
+- [ ] Pas de secrets en dur dans le code
+- [ ] flutter analyze OK (pas d'erreurs)
+- [ ] flutter test OK (optionnel)
+- [ ] Les fichiers secrets ne sont PAS dans git
+
+PUIS: Exécuter les commandes PUSH
+
+
+════════════════════════════════════════════════════════════════════════════
+
+## ❓ QUESTIONS?
+
+Q: Combien de clés ai-je BESOIN?
+R: Minimum: Firebase (déjà fait) + Agora (CRITIQUE)
+   Optionnel: AWS (recommended), Google Cloud
+
+Q: Puis-je PUSH sans configurer AWS?
+R: Oui, mais recording ne fonctionnera pas
+
+Q: Puis-je PUSH sans Agora?
+R: Non - Screen sharing ne fonctionnera pas
+   La dépendance est requise
+
+Q: Comment charger les clés dans le code?
+R: Avec flutter_dotenv:
+   final key = dotenv.env['AGORA_APP_ID'];
+
+
+════════════════════════════════════════════════════════════════════════════
+
+## 🚨 RÉSUMÉ
+
+✅ pubspec.yaml: DÉJÀ MIS À JOUR
+✅ .gitignore: DÉJÀ MIS À JOUR
+❌ .env.local: À REMPLIR
+❌ Firebase configs: À TÉLÉCHARGER
+❌ Agora clés: À OBTENIR
+⚠️ AWS clés: Optionnel mais recommandé
+
+ACTION IMMÉDIATE:
+1. Lire GUIDE_CONFIGURATION_CLES.md
+2. Suivre chaque étape
+3. Remplir .env.local
+4. Télécharger les configs Firebase
+5. PUIS: PUSH À GITHUB!
+
+TU N'ES PAS SEUL - Guide complet fourni! 👍
+
+
+════════════════════════════════════════════════════════════════════════════

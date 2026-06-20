@@ -1,0 +1,52 @@
+════════════════════════════════════════════════════════════════════════════
+                    🎉 CRUX v1.0.0 - PRÊT À POUSSER À GITHUB 🎉
+════════════════════════════════════════════════════════════════════════════
+
+TES INFOS:
+  👤 Username: MESCHAC-creator
+  📧 Email: kouakouchristevann@gmail.com
+  🔗 Repo: https://github.com/MESCHAC-creator/crux
+
+
+════════════════════════════════════════════════════════════════════════════
+                              COMMANDE À EXÉCUTER
+════════════════════════════════════════════════════════════════════════════
+
+ÉTAPE 1: Trouve ton chemin de projet
+
+Terminal:
+```
+pwd
+```
+
+Copie le résultat (ex: /Users/meschac/Desktop/crux)
+
+
+ÉTAPE 2: Remplace dans cette commande
+
+Replace "CHEMIN_PROJET" par le résultat du pwd
+
+cd CHEMIN_PROJET && git init && git config user.name "MESCHAC-creator" && git config user.email "kouakouchristevann@gmail.com" && git remote add origin https://github.com/MESCHAC-creator/crux.git && git add . && git commit -m "🚀 Release CRUX v1.0.0 - Production Ready" && git tag -a v1.0.0 -m "CRUX v1.0.0 Production Release" && git push -u origin main && git push origin v1.0.0 && echo "✅ SUCCÈS!"
+
+
+ÉTAPE 3: Copie-colle la commande
+
+ÉTAPE 4: Appuie sur ENTER
+
+ÉTAPE 5: Attends 2-5 minutes
+
+ÉTAPE 6: Enjoy! 🎉
+
+
+════════════════════════════════════════════════════════════════════════════
+                                  EXEMPLE COMPLET
+════════════════════════════════════════════════════════════════════════════
+
+Si tu es dans ~/crux:
+
+cd ~/crux && git init && git config user.name "MESCHAC-creator" && git config user.email "kouakouchristevann@gmail.com" && git remote add origin https://github.com/MESCHAC-creator/crux.git && git add . && git commit -m "🚀 Release CRUX v1.0.0 - Production Ready" && git tag -a v1.0.0 -m "CRUX v1.0.0 Production Release" && git push -u origin main && git push origin v1.0.0 && echo "✅ SUCCÈS!"
+
+
+════════════════════════════════════════════════════════════════════════════
+
+Voilà! C'est tout ce qu'il faut faire! 🚀

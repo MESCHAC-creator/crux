@@ -1,0 +1,109 @@
+# Dart/Flutter
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+*.iml
+*.lock
+build/
+flutter_export_environment.sh
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-project
+*.sublime-workspace
+.DS_Store
+
+# Environment Variables & Secrets
+# ⚠️ CRITICAL: Never commit these files!
+.env
+.env.local
+.env.*.local
+.env.production
+.env.staging
+secrets/
+.env.*.keys
+
+# Firebase & Cloud Config
+google-services.json
+GoogleService-Info.plist
+firebase_key.json
+serviceAccountKey.json
+
+# AWS Credentials
+.aws/
+aws_credentials.json
+
+# Google Cloud
+gcloud_credentials.json
+google_cloud_key.json
+
+# API Keys & Tokens
+*.key
+*.pem
+*.p8
+*.p12
+*.pfx
+*.jks
+keystore.properties
+
+# OS files
+Thumbs.db
+*.exe
+*.dmg
+*.app
+
+# Build artifacts
+*.apk
+*.ipa
+*.aar
+*.deb
+*.rpm
+
+# Temporary files
+*.tmp
+*.log
+*.pid
+*.swp
+*~
+
+# Node modules (for web)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Distribution
+dist/
+release/
+build/
+
+# Test coverage
+coverage/
+.coverage
+
+# Local debugging
+debug.log
+*.stacktrace
+
+# Android
+android/.gradle/
+android/build/
+android/local.properties
+android/key.properties
+
+# iOS
+ios/Pods/
+ios/Podfile.lock
+ios/Flutter/Flutter.podspec
+ios/.symlinks/
+ios/.dart_tool/
+ios/.last_build_id
+ios/Flutter/flutter_export_environment.sh
+ios/Flutter/Flutter.podspec
+
+# Web
+web/flutter_service_worker.js
+web/.dart_tool/

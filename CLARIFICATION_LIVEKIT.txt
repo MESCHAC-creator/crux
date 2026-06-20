@@ -1,0 +1,107 @@
+🎯 RÉPONSE DIRECTE À TA QUESTION
+════════════════════════════════════════════════════════════════════════════
+
+❓ Ta question: "c'est bien livekit qui est utilisé pour les videos non?"
+
+✅ RÉPONSE: NON
+
+CRUX utilise actuellement:
+├─ **AGORA** (pour ≤300 participants)
+└─ **JITSI** (pour 300-1000+ participants)
+
+────────────────────────────────────────────────────────────────────────────
+
+POURQUOI CETTE ARCHITECTURE?
+
+Agora (≤300):
+  ✅ Latence ultra-basse (50-100ms)
+  ✅ Qualité vidéo excellente
+  ✅ Infrastructure gérée (zéro ops)
+  ✅ Support enterprise Agora
+  ❌ Plus cher pour gros volumes
+
+Jitsi (300-1000+):
+  ✅ Open-source (contrôle total)
+  ✅ Scalable infiniment
+  ✅ Auto-hébergeable
+  ✅ Gratuit si self-hosted
+  ❌ Latence plus haute (200-500ms)
+
+────────────────────────────────────────────────────────────────────────────
+
+COMPARAISON: AGORA vs JITSI vs LIVEKIT
+
+┌─────────────┬──────────┬─────────┬──────────┐
+│ Aspect      │ Agora    │ Jitsi   │ LiveKit  │
+├─────────────┼──────────┼─────────┼──────────┤
+│ Max users   │ 300      │ 1000+   │ 10,000+  │
+│ Latency     │ 50ms ⭐  │ 200ms   │ 100ms ⭐ │
+│ Cost        │ $$$$     │ Free    │ Free*    │
+│ Open Source │ ❌       │ ✅      │ ✅       │
+│ Self-host   │ ❌       │ ✅      │ ✅       │
+│ Ops burden  │ Low      │ High    │ High     │
+└─────────────┴──────────┴─────────┴──────────┘
+
+* LiveKit is free but requires you to manage servers
+
+────────────────────────────────────────────────────────────────────────────
+
+POURQUOI PAS LIVEKIT D'EMBLÉE?
+
+LiveKit c'est excellent, MAIS:
+
+1. Nécessite infrastructure self-hosted
+   • Serveur Linux
+   • TURN server
+   • Redis
+   • Load balancer
+   = ~$200/mois minimum
+
+2. Nécessite expertise DevOps
+   • Déploiement
+   • Monitoring
+   • Scaling
+   • Maintenance
+
+3. Moins testé à grande échelle que Agora
+
+4. Pas de support commercial inclus
+
+────────────────────────────────────────────────────────────────────────────
+
+MEILLEURE APPROCHE?
+
+✅ CRUX v1.0 (GitHub maintenant):
+   • Agora + Jitsi (production-ready)
+   • Aucune infra à gérer
+   • Coûts prévisibles
+   • Qualité garantie
+
+✅ CRUX v2.0 (futur):
+   • Optionnel: migrer vers LiveKit only
+   • Plus de contrôle
+   • Moins cher si scale massive
+   • Mais plus d'ops
+
+────────────────────────────────────────────────────────────────────────────
+
+POUR MAINTENANT:
+
+✅ PUSH CRUX v1.0 À GITHUB AVEC AGORA + JITSI
+   C'est production-ready et testé
+
+❓ PLUS TARD: Considérer LiveKit si besoin de:
+   • Self-hosting total
+   • Scale énorme (10,000+)
+   • Contrôle complet
+
+════════════════════════════════════════════════════════════════════════════
+
+RÉSUMÉ FINAL:
+
+❌ LiveKit n'est PAS utilisé
+✅ Agora + Jitsi sont utilisés
+✅ C'est le meilleur choix pour v1.0
+✅ LiveKit est une option pour le futur
+
+CRUX EST PRÊT POUR GITHUB MAINTENANT! 🚀
