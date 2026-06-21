@@ -5,7 +5,7 @@ publish_to: 'none'
 version: 1.0.0+1
 
 environment:
-  sdk: ">=3.5.4 <4.0.0"  # 🎯 Locks down cleanly for your Dart 3.5.4 environment
+  sdk: ">=3.5.4 <4.0.0"
   flutter: ">=3.24.0"
 
 dependencies:
@@ -17,7 +17,7 @@ dependencies:
   # =====================
   # REALTIME / VIDEO & AUDIO CONTROLS
   # =====================
-  livekit_client: ^2.3.1+hotfix.1 # 🛠️ Downgraded to clear the Dart 3.5.4 compiler block
+  livekit_client: ^2.3.1+hotfix.1
   audio_session: ^0.1.19
   wakelock_plus: ^1.2.5
 
@@ -108,9 +108,16 @@ dev_dependencies:
   flutter_lints: ^4.0.0
   build_runner: ^2.4.9
   riverpod_generator: ^2.4.0
+  flutter_launcher_icons: ^0.13.1 # 🚀 ADDED: Required tool for generating the app launcher icons
 
 dependency_overrides:
-  web: ^1.0.0  # 🎯 Resolves conflicting web footprints across share_plus and Firebase
+  web: ^1.0.0
+
+# ⚙️ CONFIGURATION FOR THE ICON GENERATOR SCRIPT
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/images/icon.png" # ⚠️ Make sure this file exists, or change to your actual logo path
 
 flutter:
   uses-material-design: true
