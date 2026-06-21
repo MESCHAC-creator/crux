@@ -5,7 +5,7 @@ publish_to: 'none'
 version: 1.0.0+1
 
 environment:
-  sdk: ">=3.5.4 <4.0.0"  # 🎯 Perfectly tuned to lock your Dart 3.5.4 environment
+  sdk: ">=3.5.4 <4.0.0"  # 🎯 Locks down cleanly for your Dart 3.5.4 environment
   flutter: ">=3.24.0"
 
 dependencies:
@@ -17,7 +17,7 @@ dependencies:
   # =====================
   # REALTIME / VIDEO & AUDIO CONTROLS
   # =====================
-  livekit_client: ^2.5.0
+  livekit_client: ^2.3.1+hotfix.1 # 🛠️ Downgraded to clear the Dart 3.5.4 compiler block
   audio_session: ^0.1.19
   wakelock_plus: ^1.2.5
 
@@ -30,12 +30,12 @@ dependencies:
   # =====================
   # FIREBASE (STABLE & SYNCHRONIZED FOR DART 3.5.x)
   # =====================
-  firebase_core: ^3.6.0       # 🛠️ Rebalanced downwards from 4.7.0 to prevent internal platform friction
-  firebase_auth: ^5.3.1       # 🎯 Aligned with core 3.6.0
-  cloud_firestore: ^5.4.4     # 🎯 Fully synchronized to match core 3.6.0 on Dart 3.5.4
+  firebase_core: ^3.6.0       
+  firebase_auth: ^5.3.1       
+  cloud_firestore: ^5.4.4     
   firebase_messaging: ^15.1.3
   firebase_analytics: ^11.3.3
-  firebase_crashlytics: ^4.1.3 # 🎯 Lower bound version pairing perfectly without demanding Dart 3.6.0
+  firebase_crashlytics: ^4.1.3 
 
   # =====================
   # NOTIFICATIONS AVANCÉES
@@ -110,7 +110,7 @@ dev_dependencies:
   riverpod_generator: ^2.4.0
 
 dependency_overrides:
-  web: ^1.0.0  # 🎯 Unifies internal web requirements for share_plus and Firebase under Dart 3.5.4
+  web: ^1.0.0  # 🎯 Resolves conflicting web footprints across share_plus and Firebase
 
 flutter:
   uses-material-design: true
