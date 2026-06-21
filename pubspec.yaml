@@ -5,8 +5,8 @@ publish_to: 'none'
 version: 1.0.0+1
 
 environment:
-  sdk: ">=3.6.0 <4.0.0"
-  flutter: ">=3.27.0"
+  sdk: ">=3.12.0 <4.0.0"      # 🛠️ Adapté rétroactivement pour votre SDK Dart actuel
+  flutter: ">=3.24.0"         # 🛠️ Parfaitement aligné avec Flutter 3.44.0
 
 dependencies:
   flutter:
@@ -17,51 +17,51 @@ dependencies:
   # =====================
   # REALTIME / VIDEO & AUDIO CONTROLS
   # =====================
-  livekit_client: ^2.8.1
-  audio_session: ^0.1.21       # 🎧 Gère les interruptions audio (appels cellulaires durant la visio)
-  wakelock_plus: ^1.2.8        # 💡 Empêche l'écran de se mettre en veille pendant une réunion
+  livekit_client: ^2.5.0       # ✅ Version stable et ultra-compatible avec Flutter 3.44
+  audio_session: ^0.1.19
+  wakelock_plus: ^1.2.5
 
   # =====================
   # STATE MANAGEMENT
   # =====================
-  flutter_riverpod: ^2.6.0
-  riverpod_annotation: ^2.3.5
+  flutter_riverpod: ^2.5.1
+  riverpod_annotation: ^2.3.3
 
   # =====================
-  # FIREBASE (LATEST STABLE)
+  # FIREBASE (STABLE ET COMPATIBLE DART < 3.6.0)
   # =====================
-  firebase_core: ^4.11.0
-  firebase_auth: ^6.5.2
-  cloud_firestore: ^6.6.0
-  firebase_messaging: ^15.3.0
-  firebase_analytics: ^12.2.2
-  firebase_crashlytics: ^5.3.0
+  firebase_core: ^4.7.0       # 🔥 Version pivot pour éviter les conflits de compilation
+  firebase_auth: ^6.1.2       # 🎯 Alignement issu du BOM Firebase pour Dart précédent
+  cloud_firestore: ^6.1.0     # 🎯 Version stable compatible Dart pré-3.6.0
+  firebase_messaging: ^15.1.3
+  firebase_analytics: ^12.0.4
+  firebase_crashlytics: ^5.1.3
 
   # =====================
   # NOTIFICATIONS AVANCÉES
   # =====================
-  flutter_local_notifications: ^18.0.1 # 🔔 Gère les popups d'appels entrants sur l'écran de verrouillage
+  flutter_local_notifications: ^17.2.0
 
   # =====================
   # UI FRAMEWORK & LAYOUT
   # =====================
-  flutter_screenutil: ^5.9.3
+  flutter_screenutil: ^5.9.0
   google_fonts: ^6.2.0
   lottie: ^3.1.0
-  cached_network_image: ^3.4.1
-  gap: ^3.0.1                  # 📏 Espacements UI simplifiés et plus performants
+  cached_network_image: ^3.3.1
+  gap: ^3.0.1
 
   # =====================
   # LOCALIZATION (FR + WEST AFRICAN)
   # =====================
-  intl: ^0.20.2
+  intl: ^0.19.0
   easy_localization: ^3.0.7
 
   # =====================
   # STORAGE & SECURITY
   # =====================
-  shared_preferences: ^2.3.5
-  flutter_secure_storage: ^9.2.4 # 🔒 Chiffrement des tokens de session et identifiants
+  shared_preferences: ^2.2.3
+  flutter_secure_storage: ^9.2.2
   hive: ^2.2.3
   hive_flutter: ^1.1.0
 
@@ -69,31 +69,31 @@ dependencies:
   # PERMISSIONS & DEVICE
   # =====================
   permission_handler: ^11.3.1
-  device_info_plus: ^10.1.2
-  package_info_plus: ^8.1.2
+  device_info_plus: ^10.1.0
+  package_info_plus: ^8.0.0
 
   # =====================
   # NETWORKING
   # =====================
-  dio: ^5.7.0
-  http: ^1.2.2
-  socket_io_client: ^3.1.2
-  connectivity_plus: ^6.1.1
+  dio: ^5.4.3
+  http: ^1.2.1
+  socket_io_client: ^3.1.1
+  connectivity_plus: ^6.0.3
 
   # =====================
   # UTILITIES
   # =====================
-  uuid: ^4.5.1
-  path_provider: ^2.1.5
-  url_launcher: ^6.3.1
-  logger: ^2.4.0
+  uuid: ^4.3.3
+  path_provider: ^2.1.3
+  url_launcher: ^6.3.0
+  logger: ^2.3.0
 
   # =====================
   # MEDIA & QR
   # =====================
-  image_picker: ^1.1.2
-  video_player: ^2.9.2
-  share_plus: ^10.1.2
+  image_picker: ^1.1.0
+  video_player: ^2.8.5
+  share_plus: ^9.0.0
   qr_flutter: ^4.1.0
 
   # =====================
@@ -105,9 +105,9 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  flutter_lints: ^5.0.0
-  build_runner: ^2.4.13
-  riverpod_generator: ^2.4.3
+  flutter_lints: ^4.0.0
+  build_runner: ^2.4.9
+  riverpod_generator: ^2.4.0
 
 flutter:
   uses-material-design: true
