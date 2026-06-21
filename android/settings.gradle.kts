@@ -11,8 +11,10 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        maven(url = "https://jitpack.io")
+        maven(url = "https://github.com/jitsi/jitsi-maven-repository/raw/master/releases")
     }
 }
 
-rootProject.name = "app"
+rootProject.name = "crux"
 include(":app")
