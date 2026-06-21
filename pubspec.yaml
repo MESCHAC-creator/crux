@@ -31,13 +31,13 @@ dependencies:
   firebase_storage: ^11.5.0
 
   # WebRTC & Networking
-  flutter_webrtc: ^0.9.45
-  agora_rtc_engine: ^6.2.0
-  jitsi_meet_flutter_sdk: ^8.1.0
+  flutter_webrtc: ^1.4.1
+  agora_rtc_engine: ^6.3.2
   dio: ^5.3.0
   http: ^1.1.0
   socket_io_client: ^2.0.0
-
+  livekit_client: ^2.7.0
+  
   # UI & Design
   flutter_screenutil: ^5.9.0
   google_fonts: ^6.1.0
